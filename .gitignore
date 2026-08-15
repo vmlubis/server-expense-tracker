@@ -1,0 +1,23 @@
+# Production configuration
+config.php
+.env
+.env.*
+
+# Database / local data
+*.sql
+!seed.sql
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
