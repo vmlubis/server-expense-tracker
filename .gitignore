@@ -1,16 +1,13 @@
 # Production configuration
-config.php
+config/config.php
 .env
 .env.*
 
-# Database / local data
-*.sql
-!seed.sql
+# Local databases / private dumps
 *.sqlite
 *.sqlite3
-
-# Logs
 *.log
+*.bak
 
 # OS / editor
 .DS_Store
@@ -20,4 +17,3 @@ Thumbs.db
 
 # Temporary files
 *.tmp
-*.bak
