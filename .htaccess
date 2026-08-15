@@ -1,0 +1,8 @@
+# Return unknown routes to the application homepage.
+ErrorDocument 404 /index.php
+Options -Indexes
+
+# Never expose common local/secret files.
+<FilesMatch "^(\.env|composer\.(json|lock)|.*\.sql|README\.md)$">
+    Require all denied
+</FilesMatch>
