@@ -1,58 +1,55 @@
 # Server Expense Tracker
 
-Simple self-hosted server expense tracker built with PHP and MySQL.
-
-Track recurring server costs, billing dates, providers, and infrastructure expenses from a simple web interface.
+A simple self-hosted PHP application for tracking server expenses, recurring costs, and billing due dates.
 
 ## Features
 
-- Server expense tracking
 - Monthly and annual billing
-- Multiple currencies (USD, EUR, IDR)
-- Billing due dates
-- Provider management
+- USD, EUR, and IDR support
+- Due dates highlighted on server cards
+- Provider information
 - Add, edit, and delete servers
-- Drag & drop server ordering
+- Drag & drop card ordering
 - Responsive interface
 - PHP session authentication
-- MySQL database
-- Lightweight — no framework required
+- Password hashing with `password_hash()` / `password_verify()`
+- CSRF protection
+- PDO prepared statements
+- Asia/Jakarta timezone
+- No framework required
 
-## Tech Stack
+## Requirements
 
-- PHP 8+
+- PHP 8.0+
 - MySQL / MariaDB
-- JavaScript
-- HTML
-- CSS
+- PDO MySQL extension
+- Apache with `.htaccess` support
 
 ## Installation
 
-1. Clone the repository.
-2. Create a MySQL database.
-3. Import `seed.sql`.
-4. Copy `config.example.php` to `config.php`.
-5. Configure your database credentials.
-6. Configure the application password.
-7. Open the application in your browser.
+1. Clone or upload the repository.
+2. Create a MySQL/MariaDB database.
+3. Copy `config/config.example.php` to `config/config.php`.
+4. Put your own database host, database name, username, and password in `config/config.php`.
+5. Generate a password hash with:
 
-## Configuration
+```php
+echo password_hash('your-password', PASSWORD_DEFAULT);
+```
 
-Never commit your production credentials.
-
-Copy:
-
-`config.example.php`
-
-to:
-
-`config.php`
-
-and configure your database connection.
+6. Put the generated hash into `APP_PASSWORD_HASH`.
+7. Import `seed.sql` for demo data, or create your own server records.
+8. Open the application in your browser.
 
 ## Demo
 
-This repository uses dummy data and is safe for public demonstration.
+This public repository contains **dummy infrastructure data only**.
+
+The example configuration includes a demo password hash for `demo123`. Change it before using the application anywhere outside a demo environment.
+
+## Security
+
+Never commit `config/config.php`, `.env` files, production database dumps, real server IPs, credentials, invoices, or other private infrastructure information.
 
 ## License
 
